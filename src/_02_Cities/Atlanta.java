@@ -8,7 +8,15 @@ public class Atlanta extends City{
 
 	@Override
 	double getAnnualTaxes() {
-		return 0;
+		int pop = getPopulation();
+		double gr = getGrowthRate();
+		double tr = pop*gr;
+		double totalTaxes = tr;
+		for (int x = 0; x<pop; x++) {
+			totalTaxes=totalTaxes+0.15;
+		}
+		System.out.println(totalTaxes);
+		return totalTaxes;
 	}
 
 }
